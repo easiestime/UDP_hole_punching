@@ -14,7 +14,7 @@ while True:
     data, client_address = server_socket.recvfrom(1024)
     # 打印接收到的数据和客户端地址
     print(f"接收到来自 {client_address} 的数据: {data.decode('utf-8')}")
-    request_router.commonResponse(client_address)
+    request_router.commonResponse(data.decode('utf-8'), client_address)
     # # 可选：向客户端发送响应数据
     # response = "已收到数据"
     # server_socket.sendto(response.encode('utf-8'), client_address)
