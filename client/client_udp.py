@@ -42,11 +42,6 @@ def keep_alive():
     while True:
         command = CommandPayload(constants.keep_alive_client_message, ++uuid_index)
         client_socket.sendto(command.toResponse().encode("utf-8"), server_address)
-        # data, _ = client_socket.recvfrom(1024)
-        # response_payload = from_str(data.decode("utf-8"))
-        # content = eval(response_payload.payload)
-        # with open("connections.json", "w") as f:
-        #     json.dump(content, f)
         time.sleep(5)
 
 
